@@ -9,7 +9,7 @@ namespace DesignPatterns.Iterator
 {
     public class SaleCollection : IIterableCollection<Sale>
     {
-        private readonly List<Sale> _sales;
+        private readonly List<Sale> _sales = new List<Sale>();
         public SaleCollection() { }
         public SaleCollection(List<Sale> sales)
         {
