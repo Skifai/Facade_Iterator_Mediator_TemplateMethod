@@ -22,7 +22,7 @@ namespace DesignPatterns.Iterator
         {
             if (hasMore())
             {
-                return _collection[++_index];
+                return _collection[_index++];
             }
             else
             {
