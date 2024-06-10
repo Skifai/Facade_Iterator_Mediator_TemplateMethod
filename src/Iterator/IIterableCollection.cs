@@ -8,7 +8,7 @@ namespace DesignPatterns.Iterator
 {
     public interface IIterableCollection<T>
     {
-        public IIterator<T> createAmountIterator();
-        public IIterator<T> createTotalIterator();
+        public IIterator<T> CreateAmountIterator();
+        public IIterator<T> CreateTotalIterator();
     }
 }

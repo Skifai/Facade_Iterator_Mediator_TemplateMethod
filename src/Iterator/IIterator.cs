@@ -8,8 +8,8 @@ namespace DesignPatterns.Iterator
 {
     public interface IIterator<T>
     {
-        public T getNext();
-        public bool hasMore();
-        public void reset();
+        public T GetNext();
+        public bool HasMore();
+        public void Reset();
     }
 }

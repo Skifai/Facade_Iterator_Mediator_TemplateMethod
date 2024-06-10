@@ -14,8 +14,8 @@ namespace DesignPatterns.Tests.MediatorT
         {
             // Arrange
             IChatRoomMediator chatRoom = new ChatRoom();
-            User alice = new User("Alice", chatRoom);
-            User bob = new User("Bob", chatRoom);
+            var alice = new User("Alice", chatRoom);
+            var bob = new User("Bob", chatRoom);
             var output = new StringWriter();
             Console.SetOut(output);
 
@@ -24,7 +24,7 @@ namespace DesignPatterns.Tests.MediatorT
             bob.Send("Hello Alice!");
 
             // Assert
-            string actualOutput = output.ToString();
+            var actualOutput = output.ToString();
             Assert.Contains("[Alice]: Hi everyone!", actualOutput);
             Assert.Contains("[Bob]: Hello Alice!", actualOutput);
         }
@@ -34,8 +34,8 @@ namespace DesignPatterns.Tests.MediatorT
         {
             // Arrange
             IChatRoomMediator chatRoom = new ChatRoom();
-            User alice = new User("Alice", chatRoom);
-            Admin admin = new Admin("Admin", chatRoom);
+            var alice = new User("Alice", chatRoom);
+            var admin = new Admin("Admin", chatRoom);
             var output = new StringWriter();
             Console.SetOut(output);
 
@@ -44,7 +44,7 @@ namespace DesignPatterns.Tests.MediatorT
             admin.Send("Welcome Alice!");
 
             // Assert
-            string actualOutput = output.ToString();
+            var actualOutput = output.ToString();
             Assert.Contains("[Alice]: Hi Admin!", actualOutput);
             Assert.Contains("[Admin]: Welcome Alice!", actualOutput);
         }
@@ -54,7 +54,7 @@ namespace DesignPatterns.Tests.MediatorT
         {
             // Arrange
             IChatRoomMediator chatRoom = new ChatRoom();
-            Admin admin = new Admin("Admin", chatRoom);
+            var admin = new Admin("Admin", chatRoom);
             var output = new StringWriter();
             Console.SetOut(output);
 
@@ -62,7 +62,7 @@ namespace DesignPatterns.Tests.MediatorT
             admin.SendSystemMessage("This is a system message.");
 
             // Assert
-            string actualOutput = output.ToString();
+            var actualOutput = output.ToString();
             Assert.Contains("[Admin]: [SYSTEM] This is a system message.", actualOutput);
         }
     }

@@ -9,7 +9,7 @@ namespace DesignPatterns.Iterator
 {
     public class SaleCollection : IIterableCollection<Sale>
     {
-        private readonly List<Sale> _sales = new List<Sale>();
+        private readonly List<Sale> _sales = new();
         public SaleCollection() { }
         public SaleCollection(List<Sale> sales)
         {
@@ -27,12 +27,12 @@ namespace DesignPatterns.Iterator
         {
             return _sales.Count;
         }
-        public IIterator<Sale> createAmountIterator()
+        public IIterator<Sale> CreateAmountIterator()
         {
             return new IteratorByAmount(_sales);
         }
 
-        public IIterator<Sale> createTotalIterator()
+        public IIterator<Sale> CreateTotalIterator()
         {
             return new IteratorByTotal(_sales);
         }

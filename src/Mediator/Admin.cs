@@ -14,7 +14,7 @@ namespace DesignPatterns.Mediator
 
         public void SendSystemMessage(string message)
         {
-            string fullMessage = $"[SYSTEM] {message}";
+            var fullMessage = $"[SYSTEM] {message}";
             _chatRoom.ShowMessage(this, fullMessage);
         }
     }

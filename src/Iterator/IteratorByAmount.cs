@@ -18,9 +18,9 @@ namespace DesignPatterns.Iterator
                 .OrderBy(x => x.Amount)
                 .ToList();
         }
-        public Sale getNext()
+        public Sale GetNext()
         {
-            if (hasMore())
+            if (HasMore())
             {
                 return _collection[_index++];
             }
@@ -30,12 +30,12 @@ namespace DesignPatterns.Iterator
             }
         }
 
-        public bool hasMore()
+        public bool HasMore()
         {
             return _index < _collection.Count;
         }
 
-        public void reset()
+        public void Reset()
         {
             _index = 0;
         }

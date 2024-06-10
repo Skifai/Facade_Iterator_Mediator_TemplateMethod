@@ -10,8 +10,8 @@ namespace DesignPatterns.Mediator
     {
         public void ShowMessage(User user, string message)
         {
-            string time = DateTime.Now.ToString("HH:mm:ss");
-            string sender = user.GetName();
+            var time = DateTime.Now.ToString("HH:mm:ss");
+            var sender = user.GetName();
 
             Console.WriteLine($"{time} [{sender}]: {message}");
         }
