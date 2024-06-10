@@ -27,9 +27,7 @@
 
     public abstract class PizzaStore
     {
-        public abstract Pizza CreatePizza();
-
-        public abstract Dürüm CreateDürüm(); 
+        public abstract Pizza Create();
 
 
         protected Pizza CreateBasePizza()

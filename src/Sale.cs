@@ -2,7 +2,6 @@
 
 public class Sale
 {
-    private readonly string _test;
     private readonly decimal _amount;
     private readonly ISalePricingStrategy _strategy;
 
