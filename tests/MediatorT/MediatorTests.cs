@@ -25,8 +25,8 @@ namespace DesignPatterns.Tests.MediatorT
 
             // Assert
             string actualOutput = output.ToString();
-            Assert.Contains("Alice: Hi everyone!", actualOutput);
-            Assert.Contains("Bob: Hello Alice!", actualOutput);
+            Assert.Contains("[Alice]: Hi everyone!", actualOutput);
+            Assert.Contains("[Bob]: Hello Alice!", actualOutput);
         }
 
         [Fact]
@@ -45,8 +45,8 @@ namespace DesignPatterns.Tests.MediatorT
 
             // Assert
             string actualOutput = output.ToString();
-            Assert.Contains("Alice: Hi Admin!", actualOutput);
-            Assert.Contains("Admin: Welcome Alice!", actualOutput);
+            Assert.Contains("[Alice]: Hi Admin!", actualOutput);
+            Assert.Contains("[Admin]: Welcome Alice!", actualOutput);
         }
 
         [Fact]
@@ -63,7 +63,7 @@ namespace DesignPatterns.Tests.MediatorT
 
             // Assert
             string actualOutput = output.ToString();
-            Assert.Contains("Admin: [SYSTEM] This is a system message.", actualOutput);
+            Assert.Contains("[Admin]: [SYSTEM] This is a system message.", actualOutput);
         }
     }
 }
