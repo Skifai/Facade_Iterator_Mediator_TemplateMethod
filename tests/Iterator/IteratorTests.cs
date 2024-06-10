@@ -15,8 +15,8 @@ namespace DesignPatterns.Tests.Iterator
         {
             //Arrange
             var collection = new SaleCollection();
-            collection.Add(new Sale(100,new PercentageDiscountPricingStrategy(10)));
-            collection.Add(new Sale(90, new PercentageDiscountPricingStrategy(10)));
+            collection.Add(new Sale(100,new PercentageDiscountPricingStrategy(50)));
+            collection.Add(new Sale(90, new PercentageDiscountPricingStrategy(20)));
             collection.Add(new Sale(80, new PercentageDiscountPricingStrategy(10)));
 
             //Act
@@ -39,8 +39,8 @@ namespace DesignPatterns.Tests.Iterator
         {
             //Arrange
             var collection = new SaleCollection();
-            collection.Add(new Sale(100, new PercentageDiscountPricingStrategy(10)));
-            collection.Add(new Sale(90, new PercentageDiscountPricingStrategy(10)));
+            collection.Add(new Sale(100, new PercentageDiscountPricingStrategy(50)));
+            collection.Add(new Sale(90, new PercentageDiscountPricingStrategy(20)));
             collection.Add(new Sale(80, new PercentageDiscountPricingStrategy(10)));
 
             //Act
@@ -54,8 +54,8 @@ namespace DesignPatterns.Tests.Iterator
             iterator.hasMore().Should().BeFalse();
 
             sale1.GetTotal().Should().Be(72);
-            sale2.GetTotal().Should().Be(81);
-            sale3.GetTotal().Should().Be(90);
+            sale2.GetTotal().Should().Be(72);
+            sale3.GetTotal().Should().Be(50);
         }
     }
 }
