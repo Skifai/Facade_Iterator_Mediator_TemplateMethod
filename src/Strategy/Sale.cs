@@ -20,12 +20,16 @@ public class Sale
 
     public virtual SaleLineItem Create()
     {
-
+        return null;
     }
 }
 
 public class SuperSale : Sale
 {
+    public SuperSale(decimal amount, ISalePricingStrategy strategy) : base(amount, strategy)
+    {
+    }
+
     public override SaleLineItem Create()
     {
         return base.Create();
