@@ -9,48 +9,61 @@ namespace DesignPatterns.Tests.MediatorT
 {
     public class MediatorTests
     {
-        public static void Main(string[] args)
+        [Fact]
+        public void TestUserMessaging()
         {
-            TestUserMessaging();
-            TestAdminMessaging();
-            TestAdminSystemMessaging();
-        }
-
-        private static void TestUserMessaging()
-        {
+            // Arrange
             IChatRoomMediator chatRoom = new ChatRoom();
-
             User alice = new User("Alice", chatRoom);
             User bob = new User("Bob", chatRoom);
+            var output = new StringWriter();
+            Console.SetOut(output);
 
-            Console.WriteLine("Test: User Messaging");
+            // Act
             alice.Send("Hi everyone!");
             bob.Send("Hello Alice!");
-            Console.WriteLine();
+
+            // Assert
+            string actualOutput = output.ToString();
+            Assert.Contains("Alice: Hi everyone!", actualOutput);
+            Assert.Contains("Bob: Hello Alice!", actualOutput);
         }
 
-        private static void TestAdminMessaging()
+        [Fact]
+        public void TestAdminMessaging()
         {
+            // Arrange
             IChatRoomMediator chatRoom = new ChatRoom();
-
             User alice = new User("Alice", chatRoom);
             Admin admin = new Admin("Admin", chatRoom);
+            var output = new StringWriter();
+            Console.SetOut(output);
 
-            Console.WriteLine("Test: Admin Messaging");
+            // Act
             alice.Send("Hi Admin!");
             admin.Send("Welcome Alice!");
-            Console.WriteLine();
+
+            // Assert
+            string actualOutput = output.ToString();
+            Assert.Contains("Alice: Hi Admin!", actualOutput);
+            Assert.Contains("Admin: Welcome Alice!", actualOutput);
         }
 
-        private static void TestAdminSystemMessaging()
+        [Fact]
+        public void TestAdminSystemMessaging()
         {
+            // Arrange
             IChatRoomMediator chatRoom = new ChatRoom();
-
             Admin admin = new Admin("Admin", chatRoom);
+            var output = new StringWriter();
+            Console.SetOut(output);
 
-            Console.WriteLine("Test: Admin System Messaging");
+            // Act
             admin.SendSystemMessage("This is a system message.");
-            Console.WriteLine();
+
+            // Assert
+            string actualOutput = output.ToString();
+            Assert.Contains("Admin: [SYSTEM] This is a system message.", actualOutput);
         }
     }
 }
