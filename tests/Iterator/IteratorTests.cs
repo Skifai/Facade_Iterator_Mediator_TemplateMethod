@@ -44,7 +44,7 @@ namespace DesignPatterns.Tests.Iterator
             collection.Add(new Sale(80, new PercentageDiscountPricingStrategy(10)));
 
             //Act
-            var iterator = collection.createAmountIterator();
+            var iterator = collection.createTotalIterator();
 
             var sale1 = iterator.getNext();
             var sale2 = iterator.getNext();
@@ -53,9 +53,9 @@ namespace DesignPatterns.Tests.Iterator
             //Assert
             iterator.hasMore().Should().BeFalse();
 
-            sale1.GetTotal().Should().Be(72);
+            sale1.GetTotal().Should().Be(50);
             sale2.GetTotal().Should().Be(72);
-            sale3.GetTotal().Should().Be(50);
+            sale3.GetTotal().Should().Be(72);
         }
     }
 }
